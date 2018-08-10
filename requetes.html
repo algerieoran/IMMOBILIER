@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Requêtes sur la BDD immobilier</title>
+    <style> body {background: black; color: white; } </style>
 </head>
 <body>
     <h1>Requêtes sur la BDD Immobilier</h1>
 
     <p>1/ Afficher les noms des agences :  <code>br
-        SELECT * FROM agence;</code></p> 
+        SELECT * FROM agence </code></p> 
     <p>1bis / en les triant par nom : <code>br
         SELECT * FROM agence ORDER BY nom ASC</code></p>
     <hr>
@@ -20,9 +21,9 @@
     <hr>
 
     <p>3/ Quel est le premier enregistrement de la table logement ?<code>br
-        SELECT * FROM logement LIMIT 0,1; . </code> si on veut les 2 premiers ex : <code>SELECT * FROM logement LIMIT 0,2; </code></p>
+        SELECT * FROM logement LIMIT 0,1  </code> si on veut les 2 premiers ex : <code>SELECT * FROM logement LIMIT 0,2; </code></p>
     <p>3bis / Quel est le dernier enregistrement de la table logement ?<code>br
-        SELECT * FROM logement WHERE idLogement = (SELECT MAX(idLogement) FROM logement);</code></p>
+        SELECT * FROM logement WHERE idLogement = (SELECT MAX(idLogement) FROM logement)</code></p>
     <hr>
 
     <p>4/ Afficher le nombre de logements (avec un alias "nombre_de_logement") <code>br
@@ -49,7 +50,8 @@
 
     <p>13/ Mettre à jour l'agence Orpi souhaite diminuer les frais qu'elle applique sur le logement id 5246 de 800 à 730 €: <code><br>UPDATE logement_agence SET frais='730' WHERE idLogement=5246 AND idAgence= (SELECT idAgence FROM agence WHERE nom='Orpi')</code></p><hr>
 
-    <p>14/ <code><br></code></p><hr>
+    <p>14/ Quel sont les logements gérer par l'agence laforêt : <code><br>SELECT idLogement FROM logement_agence WHERE idAgence = (SELECT idAgence FROM agence WHERE nom = 'laforet')</code></p><hr>
+
     <p><code><br></code></p><hr>
     <p><code><br></code></p><hr>
     <p><code><br></code></p><hr>

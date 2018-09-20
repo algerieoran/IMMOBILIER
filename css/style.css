@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+body{
+    background: silver;
+}
+
+h1{
+    color: rgba(129, 12, 90, 2);
+    text-align: center;
+}
+
+p{
+    color: rgb(202, 18, 34);
+}
+
+code{
+    color:olive;
+}
